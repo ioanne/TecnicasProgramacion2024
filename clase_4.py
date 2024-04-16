@@ -11,11 +11,11 @@ def es_par(valor):
         return False
 
 # Void
-def es_par(valor):
-    if valor % 2 == 0:
-        print("Es par")
-    else:
-        print("Es impar")
+# def es_par(valor):
+#     if valor % 2 == 0:
+#         print("Es par")
+#     else:
+#         print("Es impar")
 
 def foo():
     print('mensaje')
@@ -27,7 +27,7 @@ print(f"El resultado es: {es_par(15)}")
 print(f"El resultado es: {es_par(17)}")
 print(f"El resultado es: {es_par(22)}")
 
-# mensaje = 'Hola mundo!'
+mensaje = 'Hola mundo!'
 print(f"Escribir nuestro mensaje {mensaje}")
 
 # Capturando errores y resolviendo en tiempo de ejecución
@@ -81,16 +81,29 @@ print(valor_random)
 
 from random import randint
 
-def dividir_random(valor, valor2, valor3, valor4):
+def dividir_random(valor, valor2, valor3=None, valor4=None):
+    
     valor_random = randint(1, 10)
-    # Código para valor
+    resultado1 = valor / valor_random
 
     valor_random = randint(1, 10)
-    # Código para valor2
-
-    valor_random = randint(1, 10)
-    # Código para valor3
+    resultado2 = valor2 / valor_random
 
 
-    valor_random = randint(1, 10)
-    # Código para valor4
+    # Es una buena practica declarar los valores antes
+    resultado3 = None
+    if valor3:
+        valor_random = randint(1, 10)
+        resultado3 = valor3 / valor_random
+
+    resultado4 = None
+    if valor4:
+        valor_random = randint(1, 10)
+        resultado4 = valor4 / valor_random
+
+    return resultado1, resultado2, resultado3, resultado4
+
+
+print(dividir_random(10, 20))
+print(dividir_random(10, 20, 30))
+print(dividir_random(10, 20, 30, 40))
