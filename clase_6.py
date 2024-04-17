@@ -82,6 +82,18 @@ def promedio(lista):
         resultado = resultado + valor # Sumamos al valor anterior el nuevo valor
     return resultado / len(lista) # calculamos el promedio dividiendo el resultado por la cantidad
 
+
+def contador(lista, par=True):
+    contador = 0
+    for valor in lista:
+        if (par and valor % 2 == 0) or (not par and valor % 2 != 0):
+            contador += 1
+    return contador
+
+
+print(contador([1,2,2,2,2,3,4,5,5,5,5,5,3,3], par=False))
+
+
 # Algoritmo
 valores = [] # Declaramos una lista de valores, vacia.
 cantidad_valores = int(input('Cantidad maxima: '))
@@ -91,8 +103,7 @@ while len(valores) < cantidad_valores: # Creamos un ciclo repetitivo infinito co
         break # Sintaxis para romper un bucle repetitivo.
     else:
         valores.append(int(ingreso)) # Almacena un valor entero en la lista
-
+    
 
 print(promedio(valores)) # Calcula el promedio dinamico
-
 print(promedio([5,6,9,12])) # Calcula un promedio de numero fijos
