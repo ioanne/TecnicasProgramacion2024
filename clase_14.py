@@ -33,15 +33,31 @@ class Vehiculo(VehiculoAbstracto):
         return "Apagando"
 
 
+
+
+
+
+
+
+"""
+Cuál es la relación entre 
+los métodos de acceso y
+los métodos de modificación
+la validación
+el encapsulamiento
+
+en programación orientada a objetos
+"""
 class Auto(Vehiculo):
     ruedas = 4
 
     def __init__(self):
         self._velocidad = 19
 
+    # Método de acceso restringe la modificación
     # Getter
     @property
-    def velocidad(self):
+    def velocidad(self): # Solo lectura
         return self._velocidad
 
     # Setter
@@ -53,6 +69,17 @@ class Auto(Vehiculo):
     def acelerar(self):
         self._velocidad = self._velocidad + 1
         return self._velocidad
+
+"""
+"""
+
+
+
+
+
+
+
+
 
     def doblar(self, direccion):
         return f"Doblando hacia {direccion}"
