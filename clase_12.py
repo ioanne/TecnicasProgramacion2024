@@ -17,11 +17,11 @@ class Carrera:
 
 
 class CarreraTecnicatura(Carrera):
-    pass
+    nombre = "Tecnicatura"
 
 
 class CarreraIngenieria(Carrera):
-    pass
+    nombre = "Ingenieria"
 
 
 class Asignatura:
@@ -35,7 +35,7 @@ class IngenieriaDeSoftware(CarreraIngenieria):
         # Agregación
         self.asignaturas = []
         for asignatura in asignaturas:
-            self.asignaturas.append(Asignatura(**asignatura))
+            self.asignaturas.append(Asignatura(**asignatura.profesor))
 
 
 class DomicilioLegal:
